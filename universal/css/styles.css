@@ -1,0 +1,157 @@
+/* Variables */
+:root {
+    --primary-color: #333;
+    --secondary-color: #666;
+    --accent-color: #007bff;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+}
+
+/* Reset básico */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-color);
+    color: var(--primary-color);
+}
+
+.hero-section {
+    position: relative;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+/* PRODUCTOS */
+.card {
+    height: auto; /* Cambiado para que la altura se ajuste automáticamente */
+    margin-bottom: 2rem;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.card-img-container {
+    height: 250px; /* Ajustado para que se vea bien en móviles */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa;
+    overflow: hidden;
+}
+
+.card-img-top {
+    max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
+    max-height: 100%; /* Asegura que la imagen no exceda la altura del contenedor */
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+@media (max-width: 768px) {
+    .card {
+        margin-bottom: 1rem; /* Espaciado reducido en móviles */
+    }
+
+    .card-img-container {
+        height: 200px; /* Ajustado para móviles */
+    }
+}
+
+/* CATEGORÍAS */
+.category-section {
+    padding: 40px 0;
+    background-color: var(--light-color);
+}
+
+.category-icon {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+/* FOOTER */
+.footer {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+}
+
+/* NAVBAR */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: white;
+    padding: 10px 20px;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* BOTONES */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 10px 20px;
+    margin-bottom: 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Modal */
+.modal-content {
+    background-color: #f8f9fa;
+}
+
+.modal-body {
+    padding: 0;
+}
+
+.modal-details {
+    background-color: #fff;
+    padding: 2rem;
+}
+
+/* Ajustes para móviles */
+@media (max-width: 576px) {
+    .hero-text {
+        font-size: 1rem; /* Ajustar el tamaño del texto en móviles */
+    }
+
+    .btn-light {
+        padding: 0.5rem 1.5rem; /* Ajustar el tamaño del botón en móviles */
+        font-size: 1rem; /* Ajustar el tamaño de la fuente del botón */
+    }
+
+    .modal-img {
+        max-width: 100%; /* Asegura que la imagen del modal no exceda el ancho */
+        height: auto; /* Mantiene la proporción de la imagen */
+    }
+}

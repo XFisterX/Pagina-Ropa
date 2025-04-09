@@ -1,12 +1,340 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1 class="blue-text text-center">Comienzo de la prueba</h1>
-</body>
-</html>
+<!DOCTYPE html> <html lang="es"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>FibreRogue - Tienda de Ropa</title> <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> <link rel="stylesheet" href="universal/css/styles.css"> <style> .card { height: 600px; margin-bottom: 2rem; overflow: hidden; cursor: pointer; } .card-img-container { height: 400px; display: flex; align-items: center; justify-content: center; background-color: #f8f9fa; overflow: hidden; padding: 20px; } .card-img-top { transform: rotate(-90deg); max-width: 400px; max-height: 300px; width: auto; height: auto; object-fit: contain; } .card-body { background-color: white; padding: 1.5rem; } .modal-img-container { display: flex; justify-content: center; align-items: center; background-color: white; padding: 2rem; height: 600px; position: relative; overflow: hidden; } .modal-img { transform: rotate(-90deg); max-width: 550px; max-height: 550px; width: auto; height: auto; object-fit: contain; position: absolute; margin: auto; top: 0; left: 0; right: 0; bottom: 0; } .modal-dialog { max-width: 800px; margin: 1.75rem auto; } .modal-content { background-color: #f8f9fa; } .modal-body { padding: 0; } .modal-details { background-color: white; padding: 2rem; margin-top: 1rem; border-radius: 0.5rem; } .modal-footer { background-color: white; border-top: none; padding: 1.5rem; } </style> </head> <body> <!-- Navbar --> <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <div class="container"> <a class="navbar-brand bg-dark" href="#">FibreRogue</a> <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"> <span class="navbar-toggler-icon"></span> </button> <div class="collapse navbar-collapse" id="navbarNav"> <ul class="navbar-nav ms-auto"> <li class="nav-item"> <a class="nav-link" href="#inicio">Inicio</a> </li> <li class="nav-item"> <a class="nav-link" href="#productos">Productos</a> </li> <!-- <li class="nav-item"> <a class="nav-link" href="#categorias">Categorías</a> </li>--> <li class="nav-item"> <a class="nav-link" href="#contacto">Contactos</a> </li> </ul> </div> </div> </nav> <!-- Hero Section --> <section class="hero-section position-relative" id="inicio"> <img src="images/Banner.jpg" class="img-fluid w-100" alt="Banner">
+<img src="images/FibreRogue.jpg" alt="FibreRogue" 
+     class="position-absolute" 
+     style="bottom: 20px; left: 20px; width: 150px; z-index: 2;">
 
+     <div class="container hero-text d-flex flex-column justify-content-center align-items-center position-absolute top-50 start-50 translate-middle text-center" style="z-index: 3; margin-top: 160px;">
+        <a href="#productos" class="btn btn-light" style="padding: 1rem 2.5rem; font-size: 1.25rem;">Ver Colección</a>
+</div>
+</section>
+<!-- Productos Destacados -->
+<section class="py-5" id="productos">
+    <div class="container">
+        <h2 class="text-center mb-4">Productos Destacados</h2>
+        <div class="row">
+
+            <!-- Camiseta Blakely y Emile -->
+            <div class="col-md-4">
+                <div class="card mb-4" data-bs-toggle="modal" data-bs-target="#modalCamisetaBlakely">
+                    <div class="card-img-container">
+                        <img src="images/BlakelyEmile.jpg" class="card-img-top" alt="Camiseta Blakely y Emile">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Camiseta Blakely y Emile</h5>
+                        <p class="card-text">Camiseta Blakely y Emile</p>
+                        <p class="card-text"><strong>Precio: $14.500</strong></p>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCamisetaBlakely">Contactar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Camiseta The Pain -->
+            <div class="col-md-4">
+                <div class="card mb-4" data-bs-toggle="modal" data-bs-target="#modalCamisetaNegra">
+                    <div class="card-img-container">
+                        <img src="images/camiseta-negra.jpg" class="card-img-top" alt="Camiseta The Pain">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Camiseta The Pain</h5>
+                        <p class="card-text">Camiseta negra con diseño gráfico exclusivo</p>
+                        <p class="card-text"><strong>Precio: $14.500</strong></p>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCamisetaNegra">Contactar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Camiseta Brooklyn -->
+            <div class="col-md-4">
+                <div class="card mb-4" data-bs-toggle="modal" data-bs-target="#modalCamisetaBrooklyn">
+                    <div class="card-img-container">
+                        <img src="images/BrooklynDeDos.jpg" class="card-img-top" alt="Camiseta Brooklyn De Dos">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Camiseta Brooklyn</h5>
+                        <p class="card-text">Camiseta negra y beige con logo Brooklyn</p>
+                        <p class="card-text"><strong>Precio: $14.500</strong></p>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCamisetaBrooklyn">Contactar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Camiseta Smile -->
+            <div class="col-md-4">
+                <div class="card mb-4" data-bs-toggle="modal" data-bs-target="#modalCamisetaSmile">
+                    <div class="card-img-container">
+                        <img src="images/Smile.jpg" class="card-img-top" alt="Camiseta Smile">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Camiseta Smile</h5>
+                        <p class="card-text">Camiseta Smile</p>
+                        <p class="card-text"><strong>Precio: $14.500</strong></p>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCamisetaSmile">Contactar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Camiseta Palm Angels -->
+            <div class="col-md-4">
+                <div class="card mb-4" data-bs-toggle="modal" data-bs-target="#modalCamisetaPalm">
+                    <div class="card-img-container">
+                        <img src="images/PalmAngelDelante.JPG" class="card-img-top" alt="Camiseta PalmAngelDelante">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Camiseta Palm Angels</h5>
+                        <p class="card-text">Camiseta negra con diseño gráfico exclusivo</p>
+                        <p class="card-text"><strong>Precio: $14.500</strong></p>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCamisetaPalm">Contactar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Camiseta All Eyez On Me -->
+            <div class="col-md-4">
+                <div class="card mb-4" data-bs-toggle="modal" data-bs-target="#modalCamisetaAllEyezOnMe">
+                    <div class="card-img-container">
+                        <img src="images/AllEyezOnMe.JPG" class="card-img-top" alt="Camiseta All Eyez On Me">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Camiseta All Eyez On Me</h5>
+                        <p class="card-text">Camiseta negra con diseño gráfico exclusivo</p>
+                        <p class="card-text"><strong>Precio: $14.500</strong></p>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCamisetaAllEyezOnMe">Contactar</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Categorías -->
+<!-- <section class="category-section" id="categorias"> <div class="container"> <h2 class="text-center mb-4">Categorías</h2> <div class="row"> <div class="col-md-4 text-center mb-4"> <i class="fas fa-tshirt category-icon"></i> <h4>Camisetas</h4> </div> <div class="col-md-4 text-center mb-4"> <i class="fas fa-vest category-icon"></i> <h4>Buzos</h4> </div> <div class="col-md-4 text-center mb-4"> <i class="fas fa-socks category-icon"></i> <h4>Pantalones</h4> </div> </div> </div> </section>-->
+<!-- Footer -->
+<footer class="footer" id="contacto">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h5>FibreRogue</h5>
+                <p>Tu destino de moda favorito</p>
+            </div>
+            <div class="col-md-4">
+                <h5>Contacto</h5>
+                <p>Email: <a href="mailto:fibrerogue@gmail.com" class="text-white">fibrerogue@gmail.com</a></p>
+                <p>Tel: 3491 540034 / 3491 455980</p>
+            </div>
+            <div class="col-md-4">
+                <h5>Síguenos</h5>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/fibrerogue?igsh=dzdwbDl0ZXo1dmYx" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61575201923563" target="_blank"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Whatsapp -->
+<!-- Camiseta Blakely y Emile Wap-->
+<div class="modal fade" id="modalCamisetaBlakely" tabindex="-1" aria-labelledby="modalCamisetaBlakelyLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title" id="modalCamisetaBlakelyLabel">Camiseta Blakely y Emile</h6>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-img-container">
+                    <img src="images/BlakelyEmile.jpg" class="modal-img" alt="Camiseta Blakely y Emile">
+                </div>
+                <div class="modal-details">
+                    <h6>Detalles del Producto</h6>
+                    <p>Camiseta Blakely y Emile</p>
+                    <p><strong>Precio: $14.500</strong></p>
+                    <p>Características:</p>
+                    <ul>
+                        <li>Material: 100% Algodón</li>
+                        <li>Diseño exclusivo</li>
+                        <li>Estampado de alta calidad</li>
+                        <li>Disponible en varios talles</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <a href="https://wa.me/3491540034?text=Hola,%20me%20interesa%20la%20Camiseta%20Blakely%20y%20Emile" target="_blank" class="btn btn-primary">
+                    <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Camiseta The Pain Wap-->
+<div class="modal fade" id="modalCamisetaNegra" tabindex="-1" aria-labelledby="modalCamisetaNegraLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalCamisetaNegraLabel">Camiseta The Pain</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-img-container">
+                    <img src="images/camiseta-negra.jpg" class="modal-img" alt="Camiseta The Pain">
+                </div>
+                <div class="modal-details">
+                    <h4>Detalles del Producto</h4>
+                    <p>Camiseta negra con diseño gráfico exclusivo</p>
+                    <p><strong>Precio: $14.500</strong></p>
+                    <p>Características:</p>
+                    <ul>
+                        <li>Material: 100% Algodón</li>
+                        <li>Diseño exclusivo</li>
+                        <li>Estampado de alta calidad</li>
+                        <li>Disponible en varios talles</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <a href="https://wa.me/3491540034?text=Hola,%20me%20interesa%20la%20Camiseta%20The%20Pain" target="_blank" class="btn btn-primary">
+                    <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Camiseta Brooklyn --> <div class="modal fade" id="modalCamisetaBrooklyn" tabindex="-1" aria-labelledby="modalCamisetaBrooklynLabel" aria-hidden="true"> <div class="modal-dialog modal-lg"> <div class="modal-content"> <div class="modal-header"> <h5 class="modal-title" id="modalCamisetaBrooklynLabel">Camiseta Brooklyn</h5> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> </div>
+        <!-- Cuerpo del Modal - Imágenes -->
+        <div class="modal-body">
+            <div class="modal-img-container">
+                <img src="images/BrooklynDeDos.jpg" class="modal-img" alt="Camiseta De Dos ">
+            </div>
+            <div class="modal-details">
+                <h4>Detalles del Producto</h4>
+                <p>Camiseta negra y beige con logo Brooklyn</p>
+                <p><strong>Precio: $14.500</strong></p>
+                <p>Características:</p>
+                <ul>
+                    <li>Material: 100% Algodón</li>
+                    <li>Diseño exclusivo</li>
+                    <li>Estampado de alta calidad</li>
+                    <li>Disponible en varios talles</li>
+                </ul>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <a href="https://wa.me/3491540034?text=Hola,%20me%20interesa%20la%20Camiseta%20Brooklyn" target="_blank" class="btn btn-primary">
+                <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
+            </a>
+        </div>
+    </div>
+</div>
+</div>
+<!-- Camiseta Smile Wap-->
+<div class="modal fade" id="modalCamisetaSmile" tabindex="-1" aria-labelledby="modalCamisetaSmileLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalCamisetaSmileLabel">Camiseta Smile</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-img-container">
+                    <img src="images/Smile.jpg" class="modal-img" alt="Camiseta Smile">
+                </div>
+                <div class="modal-details">
+                    <h4>Detalles del Producto</h4>
+                    <p>Camiseta Smile</p>
+                    <p><strong>Precio: $14.500</strong></p>
+                    <p>Características:</p>
+                    <ul>
+                        <li>Material: 100% Algodón</li>
+                        <li>Diseño exclusivo</li>
+                        <li>Estampado de alta calidad</li>
+                        <li>Disponible en varios talles</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <a href="https://wa.me/3491540034?text=Hola,%20me%20interesa%20la%20Camiseta%20Smile" target="_blank" class="btn btn-primary">
+                    <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Camiseta Palm Angels Wap-->
+<div class="modal fade" id="modalCamisetaPalm" tabindex="-1" aria-labelledby="modalCamisetaPalmLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalCamisetaPalmLabel">Camiseta Palm Angels</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-img-container">
+                    <img src="images/PalmAngelDelante.JPG" class="modal-img" alt="Camiseta Palm Angels">
+                </div>
+                <div class="modal-details">
+                    <h4>Detalles del Producto</h4>
+                    <p>Camiseta negra con diseño gráfico exclusivo</p>
+                    <p><strong>Precio: $14.500</strong></p>
+                    <p>Características:</p>
+                    <ul>
+                        <li>Material: 100% Algodón</li>
+                        <li>Diseño exclusivo</li>
+                        <li>Estampado de alta calidad</li>
+                        <li>Disponible en varios talles</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <a href="https://wa.me/3491540034?text=Hola,%20me%20interesa%20la%20Camiseta%20Palm%20Angel" target="_blank" class="btn btn-primary">
+                    <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Camiseta All Eyez On Me Wap-->
+<div class="modal fade" id="modalCamisetaAllEyezOnMe" tabindex="-1" aria-labelledby="modalCamisetaAllEyezOnMeLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalCamisetaAllEyezOnMeLabel">Camiseta All Eyez On Me</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-img-container">
+                    <img src="images/AllEyezOnMe.JPG" class="modal-img" alt="Camiseta All Eyez On Me">
+                </div>
+                <div class="modal-details">
+                    <h4>Detalles del Producto</h4>
+                    <p>Camiseta negra con diseño gráfico exclusivo</p>
+                    <p><strong>Precio: $14.500</strong></p>
+                    <p>Características:</p>
+                    <ul>
+                        <li>Material: 100% Algodón</li>
+                        <li>Diseño exclusivo</li>
+                        <li>Estampado de alta calidad</li>
+                        <li>Disponible en varios talles</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <a href="https://wa.me/3491540034?text=Hola,%20me%20interesa%20la%20Camiseta%20All%20Eyez%20On%20Me" target="_blank" class="btn btn-primary">
+                    <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body> </html> <!-- Comentado temporalmente <script type="module" src="universal/js/supabase-config.js"></script> <script type="module" src="universal/js/app.js"></script> -->

@@ -1,16 +1,26 @@
 {
-  "name": "usuario",
+  "name": "pagina-ropa",
   "version": "1.0.0",
-  "main": "index.html",
+  "description": "Tienda de ropa online con Supabase",
+  "main": "index.js",
+  "type": "module",
   "scripts": {
+    "start": "live-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "ropa",
+    "tienda",
+    "supabase",
+    "ecommerce"
+  ],
+  "author": "FibreRogue",
   "license": "ISC",
-  "description": "",
   "dependencies": {
-    "mysql": "^2.18.1",
-    "postgres": "^3.4.5"
+    "@supabase/supabase-js": "^2.39.3",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
   }
 }
