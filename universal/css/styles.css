@@ -27,6 +27,17 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
+    z-index: 3; /* Asegura que el texto esté por encima de otros elementos */
+}
+
+/* Ajustes para el logo en móviles */
+.hero-section img[src*="FibreRogue.jpg"] {
+    width: 80px; /* Tamaño reducido del logo en móviles */
+    z-index: 2;
+}
+
+.hero-section img[src*="Banner.jpg"] {
+    width: 100%; /* Asegura que el banner ocupe todo el ancho */
 }
 
 /* PRODUCTOS */
@@ -143,6 +154,7 @@ body {
 @media (max-width: 576px) {
     .hero-text {
         font-size: 1rem; /* Ajustar el tamaño del texto en móviles */
+        margin-bottom: 60px; /* Asegura que el texto no se superponga con el contenido */
     }
 
     .btn-light {
@@ -153,5 +165,7 @@ body {
     .modal-img {
         max-width: 100%; /* Asegura que la imagen del modal no exceda el ancho */
         height: auto; /* Mantiene la proporción de la imagen */
+        display: block; /* Asegura que la imagen se centre */
+        margin: 0 auto; /* Centra la imagen */
     }
 }
