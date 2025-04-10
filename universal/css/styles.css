@@ -17,6 +17,21 @@ body {
     color: var(--primary-color);
 }
 
+/* Navbar */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    /* background-color: white; */ /* Bootstrap ya lo hace con bg-dark, ajustar si cambias clase */
+    padding: 10px 20px; /* Ajustado por Bootstrap, verificar si es necesario */
+}
+
+.navbar-brand { /* Nota: No estás usando navbar-brand en el HTML actual */
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* Hero Section */
 .hero-section {
     position: relative;
 }
@@ -26,56 +41,69 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white;
+    color: white; /* Asegúrate que contraste con tu Banner.jpg */
     z-index: 3; /* Asegura que el texto esté por encima de otros elementos */
+    text-align: center;
+    /* Ajuste de margen superior agregado en el HTML inline, lo mantenemos si es necesario */
+    /* margin-top: 160px; */ /* Ajustar esto visualmente según el banner */
 }
 
-/* Ajustes para el logo en móviles */
-.hero-section img[src*="FibreRogue.jpg"] {
-    width: 80px; /* Tamaño reducido del logo en móviles */
-    z-index: 2;
-}
+/* Ajustes para el logo en Navbar (ya está en el HTML como inline, es mejor moverlo aquí si es posible) */
+/* Si el logo siempre estará en la navbar, podría ser así: */
+/* .navbar .container img[src*="FibreRogue.jpg"] { */
+/* position: absolute; */
+/* bottom: 4px; */
+/* right: 10px; */
+/* width: 50px; */
+/* z-index: 2; */
+/* } */
 
+/* Banner Image */
 .hero-section img[src*="Banner.jpg"] {
     width: 100%; /* Asegura que el banner ocupe todo el ancho */
+    display: block; /* Evita espacio extra debajo de la imagen */
 }
 
-/* PRODUCTOS */
+/* PRODUCTOS (Estilos combinados de style y externos) */
 .card {
-    height: auto; /* Cambiado para que la altura se ajuste automáticamente */
+    height: 600px; /* Altura fija para las tarjetas de producto */
     margin-bottom: 2rem;
     overflow: hidden;
     cursor: pointer;
+    display: flex; /* Añadido para controlar mejor la estructura interna */
+    flex-direction: column; /* Apila imagen y cuerpo verticalmente */
 }
 
 .card-img-container {
-    height: 250px; /* Ajustado para que se vea bien en móviles */
+    height: 400px; /* Altura fija para el contenedor de imagen */
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #f8f9fa;
+    background-color: #f8f9fa; /* Color de fondo claro */
     overflow: hidden;
+    padding: 20px; /* Espacio alrededor de la imagen dentro del contenedor */
+    flex-shrink: 0; /* Evita que el contenedor de imagen se encoja */
 }
 
 .card-img-top {
-    max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
-    max-height: 100%; /* Asegura que la imagen no exceda la altura del contenedor */
+    transform: rotate(-90deg); /* Rotación específica para tus imágenes */
+    max-width: 400px; /* Ancho máximo de la imagen rotada */
+    max-height: 300px; /* Altura máxima de la imagen rotada */
     width: auto;
     height: auto;
-    object-fit: contain;
+    object-fit: contain; /* Asegura que toda la imagen sea visible */
 }
 
-@media (max-width: 768px) {
-    .card {
-        margin-bottom: 1rem; /* Espaciado reducido en móviles */
-    }
-
-    .card-img-container {
-        height: 200px; /* Ajustado para móviles */
-    }
+.card-body {
+    background-color: white;
+    padding: 1.5rem;
+    flex-grow: 1; /* Permite que el cuerpo de la tarjeta crezca para llenar el espacio */
+    display: flex; /* Control interno del card-body */
+    flex-direction: column; /* Apila el contenido verticalmente */
+    justify-content: space-between; /* Empuja el botón hacia abajo */
 }
 
-/* CATEGORÍAS */
+/* CATEGORÍAS (Comentado en HTML, mantener si se usará) */
 .category-section {
     padding: 40px 0;
     background-color: var(--light-color);
@@ -95,10 +123,27 @@ body {
     text-align: center;
 }
 
+.footer h5 {
+    margin-bottom: 1rem;
+}
+
+.footer p {
+    margin-bottom: 0.5rem;
+}
+
+.footer a {
+    color: #adb5bd; /* Un gris claro para los enlaces del footer */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.footer a:hover {
+    color: white;
+}
+
 .social-links a {
     color: white;
     font-size: 1.5rem;
-    margin-right: 1rem;
+    margin: 0 0.5rem; /* Espacio horizontal entre iconos */
     transition: color 0.3s;
 }
 
@@ -106,66 +151,224 @@ body {
     color: var(--accent-color);
 }
 
-/* NAVBAR */
-.navbar {
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    background-color: white;
-    padding: 10px 20px;
-}
-
-.navbar-brand {
-    font-weight: bold;
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    text-decoration: none;
-}
-
 /* BOTONES */
 .btn-primary {
-    display: inline-block;
+    /* display: inline-block; */ /* Bootstrap ya lo maneja */
     background-color: var(--accent-color);
+    border-color: var(--accent-color); /* Añadir borde para consistencia */
     color: white;
-    padding: 10px 20px;
-    margin-bottom: 15px;
+    padding: 10px 20px; /* Ajustar si se prefiere sobre el padding de Bootstrap */
+    margin-bottom: 0; /* Quitar margen inferior si está dentro de card-body flex */
     text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    border-radius: 5px; /* Ajustar si se prefiere sobre el de Bootstrap */
+    transition: background-color 0.3s, border-color 0.3s;
+    align-self: flex-start; /* Alinea el botón a la izquierda en el card-body */
 }
 
 .btn-primary:hover {
     background-color: #0056b3;
+    border-color: #0056b3;
+    color: white;
 }
 
-/* Modal */
+/* Modal (Estilos combinados) */
+.modal-dialog {
+    max-width: 800px; /* Ancho máximo del modal */
+    margin: 1.75rem auto; /* Margen por defecto */
+}
+
 .modal-content {
-    background-color: #f8f9fa;
+    background-color: #f8f9fa; /* Fondo general del contenido modal */
+}
+
+.modal-header {
+    border-bottom: none; /* Quitar borde inferior del header */
+    padding: 1rem 1.5rem; /* Ajustar padding */
+}
+
+.modal-title {
+    font-weight: bold;
 }
 
 .modal-body {
-    padding: 0;
+    padding: 0; /* Sin padding directo en el body para controlar contenedores internos */
+}
+
+.modal-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white; /* Fondo blanco para la imagen */
+    padding: 2rem;
+    height: 600px; /* Altura fija para el contenedor de imagen modal */
+    position: relative; /* Necesario si se usara absolute, pero no con flex */
+    overflow: hidden;
+}
+
+.modal-img {
+    /* Estilos generales de la imagen modal */
+    transform: rotate(-90deg);
+    max-width: 550px; /* Tamaño máximo general */
+    max-height: 550px; /* Tamaño máximo general */
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    /* Quitado: position, margin, top, left, right, bottom */
 }
 
 .modal-details {
-    background-color: #fff;
+    background-color: white; /* Fondo blanco para los detalles */
     padding: 2rem;
+    margin: 1rem 1.5rem; /* Margen alrededor del bloque de detalles */
+    border-radius: 0.5rem;
 }
 
-/* Ajustes para móviles */
-@media (max-width: 576px) {
-    .hero-text {
-        font-size: 1rem; /* Ajustar el tamaño del texto en móviles */
-        margin-bottom: 60px; /* Asegura que el texto no se superponga con el contenido */
+.modal-details h4, .modal-details h6 { /* Ajustar según el nivel de encabezado usado */
+     margin-bottom: 1rem;
+     font-weight: bold;
+}
+
+.modal-details ul {
+    padding-left: 20px; /* Indentación estándar para listas */
+    margin-bottom: 0;
+}
+
+.modal-footer {
+    background-color: white; /* Fondo blanco para el footer */
+    border-top: none; /* Sin borde superior */
+    padding: 1.5rem;
+    display: flex; /* Usar flex para alinear botones */
+    justify-content: flex-end; /* Alinea botones a la derecha */
+}
+
+.modal-footer .btn {
+    margin-left: 0.5rem; /* Espacio entre botones */
+}
+
+/* Media Queries para Responsividad */
+
+/* Ajustes generales para tablets y pantallas medianas */
+@media (max-width: 768px) {
+    .card {
+        margin-bottom: 1.5rem; /* Espaciado ligeramente reducido */
     }
 
-    .btn-light {
-        padding: 0.5rem 1.5rem; /* Ajustar el tamaño del botón en móviles */
-        font-size: 1rem; /* Ajustar el tamaño de la fuente del botón */
+    .card-img-container {
+        height: 300px; /* Altura reducida para contenedor de imagen en tablet */
+    }
+    .card-img-top {
+        max-width: 300px; /* Ajustar si es necesario */
+        max-height: 250px; /* Ajustar si es necesario */
+    }
+
+    .footer .col-md-4 { /* En pantallas medianas, centrar texto */
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+    .footer .col-md-4:last-child {
+        margin-bottom: 0;
+    }
+    .social-links {
+        margin-top: 0.5rem;
+    }
+
+     .modal-img-container {
+         height: 500px; /* Reducir altura en tablet */
+     }
+     .modal-img {
+         max-width: 450px; /* Reducir tamaño imagen en tablet */
+         max-height: 450px;
+     }
+}
+
+
+/* Ajustes específicos para móviles */
+@media (max-width: 576px) {
+    /* Hero Section en Móviles */
+    .hero-text {
+        font-size: 1rem; /* Texto más pequeño */
+        /* margin-bottom: 60px; */ /* El translate ya centra, ajustar si se superpone */
+        /* margin-top: 80px; */ /* Reducir el margen superior si era necesario */
+         width: 90%; /* Evita que el texto toque los bordes */
+    }
+    /* Logo Navbar en Móviles (Si se mueve a CSS) */
+    /* .navbar .container img[src*="FibreRogue.jpg"] { */
+    /* width: 40px; */ /* Logo más pequeño */
+    /* bottom: 2px; */
+    /* right: 5px; */
+    /* } */
+
+    /* Cards en Móviles */
+    .card {
+        height: auto; /* Altura automática en móviles */
+        margin-bottom: 1.5rem;
+    }
+    .card-img-container {
+        height: 250px; /* Altura ajustada para móviles */
+        padding: 15px;
+    }
+     .card-img-top {
+        max-width: 250px; /* Ajustar tamaño de imagen rotada */
+        max-height: 200px;
+    }
+
+    /* Botones en Móviles */
+    .btn-primary {
+        padding: 8px 16px; /* Botones ligeramente más pequeños */
+        width: 100%; /* Opcional: hacer que el botón ocupe todo el ancho */
+        text-align: center;
+    }
+    /* Ajuste específico para botón 'Ver Colección' si existiera */
+    .hero-text .btn-light { /* Ejemplo si se re-añade el botón del hero */
+        padding: 0.75rem 1.8rem;
+        font-size: 1rem;
+    }
+
+    /* Modal en Móviles */
+    .modal-dialog {
+        max-width: 95%; /* Modal casi al ancho completo */
+        margin: 1rem auto; /* Margen reducido */
+    }
+    .modal-img-container {
+        height: 400px; /* Altura reducida para imagen modal */
+        padding: 1rem; /* Menos padding */
+        /* Asegurar Flex para centrar */
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .modal-img {
-        max-width: 100%; /* Asegura que la imagen del modal no exceda el ancho */
-        height: auto; /* Mantiene la proporción de la imagen */
-        display: block; /* Asegura que la imagen se centre */
-        margin: 0 auto; /* Centra la imagen */
+        /* --- Centrado Flex --- */
+        position: static; /* Quitar posicionamiento absoluto */
+
+        /* Mantener rotación */
+        transform: rotate(-90deg);
+
+        /* --- Tamaños relativos al viewport --- */
+        max-width: 85vw; /* Máximo 85% del ancho de la ventana */
+        max-height: 75vh; /* Máximo 75% de la altura de la ventana */
+        /* Esto previene que la imagen rotada se salga del contenedor */
+
+        /* Mantener object-fit y tamaño auto */
+        object-fit: contain;
+        width: auto;
+        height: auto;
     }
+
+    .modal-details {
+        padding: 1.5rem; /* Menos padding en detalles */
+        margin: 1rem; /* Menos margen */
+    }
+     .modal-footer {
+         padding: 1rem; /* Menos padding en footer */
+         justify-content: center; /* Centrar botones en móvil */
+     }
+     .modal-footer .btn {
+         width: 48%; /* Hacer botones más grandes en footer */
+         margin: 0 1%;
+     }
+     .modal-footer .btn i { /* Espacio entre icono y texto en botón whatsapp */
+         margin-right: 8px;
+     }
 }
